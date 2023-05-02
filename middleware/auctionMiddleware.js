@@ -1,5 +1,4 @@
 export default async function auctionMiddleware(params, next) {
-    console.log(params.model, params.action)
     if( params.model==='Auction') {
         const result = await next(params)
         if( params.action === 'findMany' ) {
