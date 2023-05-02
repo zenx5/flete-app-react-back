@@ -16,10 +16,10 @@ model Auction {
   description String
   image       String
   price       Float
-  start_lat   String
-  start_lon   String
-  end_lat     String
-  end_lon     String
+  start_lat   String @default("")
+  start_lon   String @default("")
+  end_lat     String @default("")
+  end_lon     String @default("")
   active      Boolean @default(false)
   bids        Bid[] @relation("AuctionRefer")
   expire_date DateTime
