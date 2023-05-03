@@ -1,11 +1,11 @@
 import { PrismaClient } from "@prisma/client";
 import userMiddleware from "../middleware/userMiddleware.js";
-import { getAll, getById } from "./BaseController.js";
+import { getAllEntity, getEntityById } from "./BaseController.js";
 
 const prisma = new PrismaClient()
 prisma.$use(userMiddleware)
 const entity = prisma.user
 
-export const getAllUsers = getAll(entity, { bids:true })
+export const getAllUsers = getAllEntity(entity, { bids:true })
 
-export const getUserById = getById(entity, {bids:true})
+export const getUserById = getEntityById(entity, {bids:true})
